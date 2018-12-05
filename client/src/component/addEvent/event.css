@@ -1,0 +1,17 @@
+.label{
+    display: block;
+    float: left;
+}
+.form{
+    width: 300px !important;
+    display:block;
+    margin: auto
+}
+.select{
+    display: block;
+}
+
+
+.box1 {
+  transition: all 1.3s;
+}

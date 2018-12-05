@@ -1,12 +1,28 @@
+body{
+  overflow-x: hidden;
+  height: 100%;
+}
 .App {
   text-align: center;
+  margin: 0px;
+  overflow-x:0 !important;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
 }
-
+.hidden-up{
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  left: -33px;
+  top:14px;
+    position: relative;
+  border-left: 20px solid transparent;
+  border-right:20px solid transparent;
+  border-bottom: 20px solid #4682B4; 
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -21,6 +37,84 @@
 .App-link {
   color: #61dafb;
 }
+.notify{
+  margin-left: 30px;
+  width: auto;
+  height: auto;
+}
+.company{
+  margin-right: 30% !important;
+}
+.container{
+  position: relative;
+
+}
+.arrow-up{
+  width: 0;
+  height: 0;
+  left: -33px;
+  top:14px;
+    position: relative;
+  border-left: 20px solid transparent;
+  border-right:20px solid transparent;
+  border-bottom: 20px solid #4682B4;
+}
+@media only screen and (max-width: 767px) {
+	#notForm {
+    top: 110px !important;
+
+  }
+  .arrow-up{
+    top: 20px !important;
+
+  }
+
+}
+.bell{
+  color: #4682B4;
+  font-size: 20px;
+}
+.greyBell{
+  color:#A8A8A8;
+}
+.formHeader{
+  height: 30px !important;
+  width: auto;
+  position: relative;
+  border-radius: 9px 9px 0px 0px;
+  background-color: #4682B4 !important;
+}
+#notForm{
+  position: absolute;
+  border-radius: 9px 9px;
+  width: 310px;
+  transform: translateX(0px);
+  transition: transform 400ms ease-out;
+  box-shadow: 3px 3px 3px #E5E4E4;
+    height: auto;
+  right: 14px;
+  z-index: 33;
+  top: 69px;
+  background-color: #fff;
+}
+#notForm.slideIn {
+  transform: translateX(100);
+}
+
+#notForm.slideOut {
+  transform: translateX(120%);
+}
+.displayInline{
+  display:inline-block;
+  cursor: pointer !important;
+}
+ion-icon{
+  height: 30px !important;
+  width: 30px !important;
+  position: relative;
+  top: 5px;
+  color:#A8A8A8;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -30,3 +124,32 @@
     transform: rotate(360deg);
   }
 }
+.notification-counter {   
+  position: relative;
+  top: -12px;
+  left: -4px;
+  
+  background-color: rgba(212, 19, 13, 1);
+  color: #fff;
+  border-radius: 3px;
+  padding: 1px 3px;
+  font: 8px Verdana;
+}
+.hidenVisible{
+  visibility: hidden;
+}
+body{
+background-image: url('http://www.desktop-screens.com/data/out/81/3227935-office-wallpapers.jpg');
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+/* .rgba-gradient {
+  background: -moz-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+  background: -webkit-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+  background: -webkit-gradient(linear, 45deg, from(rgba(42, 27, 161, 0.7)), to(rgba(29, 210, 177, 0.7)));
+  background: -o-linear-gradient(45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+  background: linear-gradient(to 45deg, rgba(42, 27, 161, 0.7), rgba(29, 210, 177, 0.7) 100%);
+} */
