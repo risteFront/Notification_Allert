@@ -22,6 +22,7 @@ router.post('/',(req,res,next)=>{
         type: req.body.type,
         title:req.body.title,
         text:req.body.text,
+        body:req.body.body,
         expires:req.body.expires,
         name:req.body.name
     })
@@ -58,19 +59,20 @@ router.get('/:notifyId',(req,res,next)=>{
             error:err
         })
     })
-    router.delete('/:notifyID',(req,res,next)=>{
-        const id = req.params.notifyID;
-        notification.remove({_id:id})
-        .exec()
-        .then((data)=>{
-            if(data){
-                res.status(200).json({message:"datais deleted"})
-            }else{
-                res.status(404).json({message:"Opps un error occur"});
-            }
-        }).catch((err)=>{
-            res.status(500),json({message:"error"})
-        })
+
+})
+router.delete('/:notifyID',(req,res,next)=>{
+    const id = req.params.notifyID;
+    notification.remove({_id:id})
+    .exec()
+    .then((data)=>{
+        if(data){
+            res.status(200).json({message:"datais deleted"})
+        }else{
+            res.status(404).json({message:"Opps un error occur"});
+        }
+    }).catch((err)=>{
+        res.status(500).json({message:"error"})
     })
 })
 module.exports = router;

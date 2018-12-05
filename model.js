@@ -7,7 +7,8 @@ const notification = new Schema({
     type: { type: String },
     title:{type:String},
     text:{type:String},
-    expires:{type:String},
+    body:{type:String},
+    expires:{type:Number},
     name:{ type:String}
 })
 // autoIncrement.initialize(mongoose.connection);
