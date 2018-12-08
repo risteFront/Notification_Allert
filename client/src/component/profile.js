@@ -18,7 +18,7 @@ class Card extends Component {
             this.setState({image:this.props.type})
         }
         console.log(this.props.expire)
-        var timestamp = moment.unix(this.props.expire);
+        var timestamp = moment.utc(Date.now()).local();
        let time =  timestamp.format("HH:mm:ss");
         this.setState({time:time})
     }
