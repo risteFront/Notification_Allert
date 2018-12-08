@@ -122,8 +122,6 @@ class Card extends Component {
         }else{
           display = false
         }
-        console.log(display)
-      //  console.log(this.props.expire)
         return (
             <form className="form" onSubmit={this.handleSubmit}>
                 {this.state.alert? this.renderSuccess():null}

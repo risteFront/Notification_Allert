@@ -78,7 +78,6 @@ class App extends Component {
             <div id="notForm" className={this.state.visible?'slideIn':'slideOut'}>
               <div className="formHeader"> </div>
                {this.state.data.map(function(i){
-                 console.log(i._id)
                  return <Cards key={i._id} id={i._id}  body={i.body} title={i.title} type={i.type} expire={i.expires}></Cards>
                })}
             </div>
