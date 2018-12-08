@@ -1,6 +1,6 @@
 # Notification_Allert
 Notification alert for web. Create and receive a notification
-#Instalation proccess
+# Istalation proccess
 #Navigate to root directory
 run npm install or yarn
 # Navigate to client directory (cd client)
