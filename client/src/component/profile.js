@@ -17,13 +17,11 @@ class Card extends Component {
         if(this.props.type.includes('http')){
             this.setState({image:this.props.type})
         }
-        console.log(this.props.expire)
         var timestamp = moment.utc(Date.now()).local();
-       let time =  timestamp.format("HH:mm:ss");
+        let time =  timestamp.format("HH:mm:ss");
         this.setState({time:time})
     }
     handleClick(){
-        console.log(this.props.id)
         this.setState({ dissapear: "dissapear" })
         fetch('http://localhost:5000/product/' + this.props.id, {
             method: 'DELETE',
@@ -42,8 +40,6 @@ class Card extends Component {
             }, 600);
 
         }
-        // console.log(this.props)
-        // console.log(this.state.dissapear)
         return (
             <div className="container">
                 <div className={this.state.dissapear}>

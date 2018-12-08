@@ -20,11 +20,7 @@ class App extends Component {
   componentDidMount() {
     setInterval(() => {
       this.state.data.map(element => {
-      // console.log(element.expires)
-
-        console.log(element)
           if(element.expires < Date.now()){
-            console.log('here')
             fetch('http://localhost:5000/product/' + element._id, {
               method: 'DELETE',
               headers: {
@@ -51,8 +47,6 @@ class App extends Component {
 
   }
   render() {
-    console.log(this.state.data)
-
     return (
       <Router>
         <div className="App">
