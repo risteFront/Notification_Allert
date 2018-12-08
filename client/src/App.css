@@ -1,7 +1,12 @@
 body{
   overflow-x: hidden;
-  height: 100%;
-}
+  background-image: url('./assets/background.jpg');
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+ }
+ 
 .App {
   text-align: center;
   margin: 0px;
@@ -137,13 +142,6 @@ ion-icon{
 }
 .hidenVisible{
   visibility: hidden;
-}
-body{
-background-image: url('http://www.desktop-screens.com/data/out/81/3227935-office-wallpapers.jpg');
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
 }
 
 /* .rgba-gradient {

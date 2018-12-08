@@ -23,6 +23,7 @@ class Card extends Component {
         this.setState({time:time})
     }
     handleClick(){
+        console.log(this.props.id)
         this.setState({ dissapear: "dissapear" })
         fetch('http://localhost:5000/product/' + this.props.id, {
             method: 'DELETE',

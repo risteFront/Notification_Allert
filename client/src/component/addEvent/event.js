@@ -13,6 +13,7 @@ class Card extends Component {
             expiresValue:'1861923661000',
             name:'text',
             body:"",
+            alert:false,
             selectType:'text',
             placeholder:'Enter a message title',
             placeholder2:"Enter a message",
@@ -49,8 +50,18 @@ class Card extends Component {
                 text: this.state.text,
                 body:this.state.body,
                 expires: this.state.expires
+    
             })
         })
+        this.setState({type:"",title:'',text:'',body:'',alert:true})
+    }
+    renderSuccess(){
+            return (
+                <div className="alert alert-primary fontSuccess">
+                    You have Successfuly send notification
+                </div>
+            )
+     
     }
     handleTitle(event) {
         this.setState({ title: event.target.value })
@@ -98,14 +109,24 @@ class Card extends Component {
            placeholder:'Enter a bonus title',
            placeholder1:"Enter a bonus prmotion",
            placeholder2:"Enter bonus message",
+           expiresValue:'1861923661000',
+           expires:'1861923661000',
            selectType:'bonus'})
        }
     }
     //1861923661000
     render() {
+        let display
+        if((this.state.body.length > 3 && this.state.title.length > 3) && this.state.type.length >3){
+          display = true;
+        }else{
+          display = false
+        }
+        console.log(display)
       //  console.log(this.props.expire)
         return (
             <form className="form" onSubmit={this.handleSubmit}>
+                {this.state.alert? this.renderSuccess():null}
                 <div>
                     <label className="label">Select type of notification</label>
                     <br></br>
@@ -122,7 +143,7 @@ class Card extends Component {
                         onChange={this.handleTitle}
                         placeholder={this.state.placeholder}
                         required></input>
-                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <small id="emailHelp" className="form-text text-muted">We'll never share your information with anyone else.</small>
 
                 </div>
                 <div>
@@ -134,6 +155,11 @@ class Card extends Component {
                         placeholder={this.state.placeholder1}
                         required></input>
                 </div>
+                {(this.state.selectType == 'promotion' && this.state.type.length > 3) && !this.state.type.includes('http')
+                ?  <div className="alert alert-danger">
+                        Please provide http url
+                     </div>:null
+                }
                 {(this.state.selectType =="text" || this.state.selectType =="promotion") ?
                 
                 <div>
@@ -159,7 +185,11 @@ class Card extends Component {
                         placeholder={this.state.placeholder2}
                     ></input>
                 </div>
-                <button type="submit" style={{marginTop:'5px'}} className="btn btn-outline-info">Submit</button>
+                {display? 
+                 <button type="submit" style={{marginTop:'5px'}} id="disabled" className="btn btn-outline-info  ">Submit</button>:
+                 <button type="submit" style={{marginTop:'5px'}} id="disabled" className="btn btn-outline-info disabled">Submit</button>
+
+}
             </form>
         )
     }

@@ -11,7 +11,9 @@
     display: block;
 }
 
-
+.fontSuccess{
+    font-size: 11px !important;
+} 
 .box1 {
   transition: all 1.3s;
 }

@@ -20,8 +20,9 @@ class App extends Component {
   componentDidMount() {
     setInterval(() => {
       this.state.data.map(element => {
-        console.log(element.expires)
+      // console.log(element.expires)
 
+        console.log(element)
           if(element.expires < Date.now()){
             console.log('here')
             fetch('http://localhost:5000/product/' + element._id, {
@@ -45,16 +46,13 @@ class App extends Component {
           if(this.state.data.length > this.state.currentNum){
             this.setState({baddge:this.state.data.length - this.state.currentNum})
           }
-        }
-        // this.setState({currentNum:this.state.data.length - this.state.notifyNumber})
-   
+        }   
     }, 2000)
 
   }
   render() {
     console.log(this.state.data)
 
-//    console.log(this.state.currentNum)
     return (
       <Router>
         <div className="App">
@@ -86,7 +84,8 @@ class App extends Component {
             <div id="notForm" className={this.state.visible?'slideIn':'slideOut'}>
               <div className="formHeader"> </div>
                {this.state.data.map(function(i){
-                 return <Cards key={i._id}  body={i.body} title={i.title} type={i.type} expire={i.expires}></Cards>
+                 console.log(i._id)
+                 return <Cards key={i._id} id={i._id}  body={i.body} title={i.title} type={i.type} expire={i.expires}></Cards>
                })}
             </div>
 
